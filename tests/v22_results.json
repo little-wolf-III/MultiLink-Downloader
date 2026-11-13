@@ -1,0 +1,20 @@
+{
+  "version": "2.2",
+  "date_japan": "2026-11-14",
+  "language_tests_passed": 6,
+  "gui_checks_passed": 10,
+  "gui_seconds": 16.563,
+  "backend_unchanged": true,
+  "sha256": {
+    "gui.py": "244db02481988ade207320df735020ebc07a9e2e04bd073efa2a3e40cf5dfb5b",
+    "i18n.py": "bad85c7fa6a58bedef6f67b8ae6897374cbea44682e342320503dbb2994416f9",
+    "network.py": "ab18f5c0956f47a933ef0c75ae5e8578ee71b18fdb694dfbd653ab5243f11630",
+    "downloader.py": "088918ae6dfd7b440edd35b7819f9fa58933a9537e035db148fa0171bf881168",
+    "LICENSE": "11526a3ff96fe318939a8e6526fad24398296d13a0a02bad3979d36b2c6575e7"
+  },
+  "previous_backend_sha256": {
+    "network.py": "ab18f5c0956f47a933ef0c75ae5e8578ee71b18fdb694dfbd653ab5243f11630",
+    "downloader.py": "088918ae6dfd7b440edd35b7819f9fa58933a9537e035db148fa0171bf881168"
+  },
+  "scope": "Linux real Tk and HTTP integration; Windows physical adapter routing not tested in this environment"
+}

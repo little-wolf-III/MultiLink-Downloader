@@ -1,15 +1,19 @@
 {
   "passed": true,
   "checks": [
-    "真实 Tk 启动及自动刷新四张候选网卡",
-    "点击候选列排除与重新启用网卡",
-    "按钮启动四路下载并暂停保存断点",
-    "界面改为两路续传并完成；逐字节比对正确",
-    "界面显示 HTTP 429，任务停止后按钮恢复",
-    "下载中关闭窗口：先停止保存再退出"
+    "Chinese-to-English switch preserves URL, path, exact count and candidate selection; preference saved",
+    "Auto option maps to zero across both languages",
+    "Validation messages and file-dialog title use the chosen language",
+    "Switching languages during probing/downloading preserves the running job and translates prior backend logs",
+    "English pause saves a resume checkpoint; paused status and history switch back to Chinese",
+    "Resume under Chinese with two adapters completes byte-for-byte; completion, progress and SHA stay correct in English",
+    "Real HTTP 429 error is displayed in English and retranslated to Chinese",
+    "User-provided adapter names remain unchanged",
+    "Closing during an English download waits for resume save and lock release",
+    "A newly created window restores the saved English preference"
   ],
   "callback_errors": [],
-  "seconds": 16.377,
+  "seconds": 16.563,
   "platform": "linux",
-  "scope": "真实 Tk + 真实 HTTP；网卡枚举替换为四个回环接口"
+  "scope": "Real Tk + real HTTP; only adapter discovery is simulated"
 }

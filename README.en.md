@@ -4,7 +4,7 @@
 
 A Windows downloader with a Tkinter interface, automatic network adapter detection, and speed-based selection of up to **four network adapters** for a single file download.
 
-**Version: 2.1**
+**Version: 2.2**
 
 ## Requirements
 
@@ -12,7 +12,21 @@ A Windows downloader with a Tkinter interface, automatic network adapter detecti
 - Python 3.10 or later, with the **Tcl/Tk and IDLE** component installed.
 - No third-party Python packages are required; the application uses the standard library.
 
-> This is the English documentation. The v2.1 application interface is currently in Chinese; the main button labels are explained below.
+## New in v2.2: interface language
+
+Use **语言 / Language** in the top-right corner to select **简体中文** or **English**. Buttons, headings, status messages, validation prompts, and retained download logs update immediately, including while a download is running.
+
+On first launch, Chinese systems default to Chinese and other systems default to English. Your choice is saved for later launches in the user configuration directory (`%APPDATA%/MultiLinkDownloader/settings.json` on Windows).
+
+Native file-dialog buttons still follow the operating system language. Adapter names, paths, and unrecognized system diagnostics retain their original text.
+
+### Upgrading from v2.1
+
+Pause the task and close the old window. Copy `gui.py` and the new `i18n.py` into the existing application folder, replacing the old `gui.py`, then run `start.bat` as usual. Alternatively, extract and run this complete package.
+
+The download backend is unchanged. Existing v2.1 `.part` and `.multilink.json` files remain compatible. Keep them at their existing save location and use the same destination to resume. Command-line output has not been localized, and backend reports/resume files retain the 2.1 format version.
+
+See [TEST_REPORT.md](TEST_REPORT.md) for this release's validation scope.
 
 ## Quick start
 
@@ -24,9 +38,9 @@ A Windows downloader with a Tkinter interface, automatic network adapter detecti
    ```
 
 2. The application automatically lists connected adapters with IPv4 addresses.
-3. Enter a direct HTTP/HTTPS file URL in **下载直链**. Click **浏览…** to choose the destination file.
-4. Leave **使用链路数** set to **自动** for automatic selection.
-5. Click **开始 / 续传** to start or resume. The application checks the target, benchmarks candidate combinations, and starts downloading.
+3. Enter a direct HTTP/HTTPS file URL in **Direct file URL / 下载直链**. Click **Browse… / 浏览…** to choose the destination file.
+4. Leave **Adapter count / 使用链路数** set to **Auto / 自动** for automatic selection.
+5. Click **Start / Resume（开始 / 续传）** to start or resume. The application checks the target, benchmarks candidate combinations, and starts downloading.
 
 The URL must point directly to a file on a server that supports **HTTP Range requests**. Ordinary web page URLs are not supported. Accessible direct file links from services such as GitHub or Hugging Face may work if the server supports the required requests.
 
@@ -35,7 +49,7 @@ The application does not include web page or video extraction, browser login, CA
 ## Adapter detection and selection
 
 - Detected adapters are candidates, not necessarily usable download routes. Each candidate is checked against the target URL when you start.
-- Click the **候选** column to include or exclude an adapter, for example to avoid using a metered mobile connection.
+- Click the **Use / 候选** column to include or exclude an adapter, for example to avoid using a metered mobile connection.
 - **Automatic mode:** compares single-adapter and multi-adapter combinations and selects the highest measured aggregate throughput. A single adapter is used if it performs best.
 - **A specified count of 1, 2, 3, or 4:** selects the fastest measured combination with that exact number of adapters. If too few candidates pass the checks, the application reports an error.
 - To force particular adapters, enable only those candidates and set the count to their number.
@@ -53,14 +67,14 @@ The selected combination reflects a short measurement against the specified file
 
 ## Pause, resume, and exit
 
-- Click **暂停** and wait for **已暂停** before exiting.
-- To resume, use the same URL and destination path, then click **开始 / 续传**.
+- Click **Pause / 暂停** and wait for **Paused / 已暂停** before exiting.
+- To resume, use the same URL and destination path, then click **Start / Resume（开始 / 续传）**.
 - You may change the adapter selection or count before resuming. The application checks and benchmarks the candidates again.
 - Keep both `filename.part` and `filename.multilink.json`. Both are required for resuming.
 - Completed chunks are checked against their saved hashes. Corrupted local chunks are downloaded again.
 - Resuming across runs requires a server version identifier: a strong ETag or Last-Modified value. Files without such an identifier can be downloaded from scratch, but cannot safely be resumed across runs.
 - Closing the window during a task requests a stop, saves progress, and then exits instead of immediately terminating download threads.
-- After disconnecting or reconnecting an adapter, click **刷新网卡** to refresh its index and address before continuing.
+- After disconnecting or reconnecting an adapter, click **Refresh adapters / 刷新网卡** to refresh its index and address before continuing.
 - Version 1.4 `.dualmeta.json` resume files are **not compatible** with v2.1. Finish old tasks with v1.4 or start a fresh download under another filename.
 
 ## Download behavior and error handling
@@ -72,7 +86,7 @@ The selected combination reflects a short measurement against the specified file
 - An **HTTP 429** response stops the entire task. Wait before resuming; the application does not switch adapters to bypass server rate limits.
 - Chunk responses must return HTTP 206 with matching Content-Range, length, and file version information.
 - File size, version information, and samples from the beginning, middle, and end are compared across routes. Inconsistent files are not combined.
-- A complete SHA-256 hash is calculated after download. If you enter a trusted expected value in **SHA-256（可选）**, it is compared automatically. Calculating a hash alone does not authenticate the source.
+- A complete SHA-256 hash is calculated after download. If you enter a trusted expected value in **SHA-256 (optional) / SHA-256（可选）**, it is compared automatically. Calculating a hash alone does not authenticate the source.
 - Existing destination files are not overwritten. Choose another filename.
 - If a `.lock` file prevents starting, first check that no other process is downloading to that path. If the previous process exited abnormally and no task remains, remove the stale lock and resume. Normal exits remove the lock automatically.
 
@@ -81,11 +95,12 @@ The selected combination reflects a short measurement against the specified file
 | File | Purpose |
 |---|---|
 | `start.bat` | Windows launcher |
-| `gui.py` | Tkinter interface; background work is separated from UI updates |
+| `gui.py` | Bilingual Tkinter interface; background work is separated from UI updates |
+| `i18n.py` | Interface translations and saved language preference |
 | `network.py` | Adapter discovery, IPv4 binding, HTTP/HTTPS transport, and Range validation |
 | `downloader.py` | Benchmarking, route selection, up to four-adapter downloading, slow-chunk takeover, resume, and SHA-256 |
 | `requirements.txt` | Runtime requirements; no third-party runtime dependencies |
-| `测试报告.txt`, `tests/` | Test scope, test code, and recorded cloud results |
+| `TEST_REPORT.md`, `tests/` | Test scope, test code, and recorded cloud results |
 
 Successful downloads also produce `filename.report.json`, containing route selection, benchmark, and verification information.
 

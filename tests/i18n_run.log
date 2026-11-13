@@ -1,0 +1,11 @@
+test_all_ui_keys_format_in_both_languages (__main__.LanguageTests.test_all_ui_keys_format_in_both_languages) ... ok
+test_backend_literals (__main__.LanguageTests.test_backend_literals) ... ok
+test_dynamic_and_nested_backend_messages (__main__.LanguageTests.test_dynamic_and_nested_backend_messages) ... ok
+test_language_preference_roundtrip (__main__.LanguageTests.test_language_preference_roundtrip) ... ok
+test_missing_or_corrupt_preferences_use_default (__main__.LanguageTests.test_missing_or_corrupt_preferences_use_default) ... ok
+test_user_data_and_unknown_details_preserved (__main__.LanguageTests.test_user_data_and_unknown_details_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK
