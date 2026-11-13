@@ -1,3 +1,4 @@
+**简体中文** | [English](README.en.md)
 # MultiLink-Downloader
 Windows 多网卡下载器，支持最多四路、自动测速选路及 Tkinter 界面。
 多链路下载器 v2.1
