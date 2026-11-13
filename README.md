@@ -1,29 +1,10 @@
 **简体中文** | [English](README.en.md)
 # MultiLink-Downloader
 Windows 多网卡下载器，支持最多四路、自动测速选路及 Tkinter 界面。
-多链路下载器 v2.2
+多链路下载器 v2.1
 =================
 适用：Windows 10/11，Python 3.10 及以上，安装时保留 Tcl/Tk and IDLE。
 只用 Python 标准库，不用 pip 安装依赖。
-
-
-## v2.2：中英界面切换
-
-- 窗口右上角 **语言 / Language** 可选择 **简体中文** 或 **English**，立即生效。
-- 支持切换按钮、表头、状态、参数提示及已有下载日志；下载过程中也能切换。
-- 首次启动：中文系统默认中文，其他系统默认英文；之后自动记住选择。
-- 语言偏好存放于用户配置目录（Windows：`%APPDATA%/MultiLinkDownloader/settings.json`）。
-- Windows 原生文件选择框内置按钮仍跟随操作系统语言。网卡名称、路径及未知系统错误保留原文。
-- 下载后端保持 v2.1 原样，v2.1 的 `.part` / `.multilink.json` 断点继续兼容。
-- 命令行输出未做语言切换；后端报告与断点中的格式版本仍为 2.1，这是兼容性标记。
-
-### 从 v2.1 升级
-
-先暂停下载并关闭旧窗口。把本版本的 `gui.py` 和新增的 `i18n.py` 放入原程序目录，覆盖旧 `gui.py`，然后照常启动 `start.bat`。
-也可以直接解压本完整包运行。已有断点应保留在原保存位置，并选择同一保存路径续传。
-
-本次测试结果见 [TEST_REPORT.md](TEST_REPORT.md)。
-
 
 一、最简单的用法
 1. 解压整个文件夹，双击 start.bat。
@@ -86,12 +67,11 @@ GitHub/Hugging Face 等的可访问文件直链可尝试使用；服务端必须
 
 五、文件说明
 - start.bat：Windows 启动器。
-- gui.py：中英 Tkinter 界面，工作线程与界面线程分离。
-- i18n.py：文字翻译及语言偏好保存。
+- gui.py：Tkinter 界面，工作线程与界面线程分离。
 - network.py：网卡发现、IPv4 绑定、HTTP/HTTPS 和 Range 校验。
 - downloader.py：测速选路、最多四路下载、拖尾接替、续传和 SHA-256。
 - requirements.txt：运行环境说明，无第三方运行依赖。
-- TEST_REPORT.md、tests/：测试范围、测试代码及本次云端结果。
+- 测试报告.txt、tests/：测试范围、测试代码及本次云端结果。
 - 下载完成会生成“文件名.report.json”，包含实际选路、测速和校验结果。
 
 可选命令行（界面用户无需使用）：
@@ -99,8 +79,6 @@ python downloader.py --list
 python downloader.py --url "https://example.com/file.bin" --out "file.bin"
 python downloader.py --url "https://example.com/file.bin" --out "file.bin" --interfaces 9,12,15,18 --count 4
 
-
-上面的 example.com 是格式示例，不是实际测试下载源。
 
 ## 许可证与商业授权
 
@@ -113,6 +91,7 @@ python downloader.py --url "https://example.com/file.bin" --out "file.bin" --int
 如需申请商业授权，请通过本仓库的 [Issues](https://github.com/little-wolf-III/MultiLink-Downloader/issues) 联系作者，简要说明使用场景。请勿在公开 Issue 中提交商业机密或个人敏感信息。
 
 本项目公开提供源码，但因包含非商业用途限制，不属于 OSI 定义的开源软件。本说明仅作摘要，具体权利与义务以 LICENSE 及另行签订的授权协议为准。
+上面的 example.com 是格式示例，不是实际测试下载源。
 
 六、验证范围
 云端 Linux 已验证真实 HTTP、四个独立源 IP、实际文件写入和真实 Tk 窗口操作。
