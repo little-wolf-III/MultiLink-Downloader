@@ -1,0 +1,10 @@
+test_20_pause_during_prepare (test_download.DownloadTests.test_20_pause_during_prepare) ... ok
+test_21_small_and_unaligned_files (test_download.DownloadTests.test_21_small_and_unaligned_files) ... ok
+test_22_more_than_four_candidates (test_download.DownloadTests.test_22_more_than_four_candidates) ... ok
+test_23_no_validator_fresh_download (test_download.DownloadTests.test_23_no_validator_fresh_download) ... ok
+test_24_matching_expected_hash (test_download.DownloadTests.test_24_matching_expected_hash) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 12.618s
+
+OK

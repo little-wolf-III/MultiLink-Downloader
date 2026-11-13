@@ -1,0 +1,25 @@
+test_01_interface_filter (__main__.DownloadTests.test_01_interface_filter) ... ok
+test_02_counts_one_to_four (__main__.DownloadTests.test_02_counts_one_to_four) ... ok
+test_03_auto_independent_four (__main__.DownloadTests.test_03_auto_independent_four) ... ok
+test_04_auto_shared_single (__main__.DownloadTests.test_04_auto_shared_single) ... ok
+test_05_redirect (__main__.DownloadTests.test_05_redirect) ... ok
+test_06_reject_no_range (__main__.DownloadTests.test_06_reject_no_range) ... ok
+test_07_reject_bad_content_range (__main__.DownloadTests.test_07_reject_bad_content_range) ... ok
+test_08_429_probe_global_stop (__main__.DownloadTests.test_08_429_probe_global_stop) ... ok
+test_09_429_download_checkpoint (__main__.DownloadTests.test_09_429_download_checkpoint) ... ok
+test_10_pause_resume_corrupt_block (__main__.DownloadTests.test_10_pause_resume_corrupt_block) ... ok
+test_11_resume_version_changed (__main__.DownloadTests.test_11_resume_version_changed) ... ok
+test_12_missing_validator_resume_refused (__main__.DownloadTests.test_12_missing_validator_resume_refused) ... ok
+test_13_hash_mismatch_preserves_part (__main__.DownloadTests.test_13_hash_mismatch_preserves_part) ... ok
+test_14_no_overwrite_or_concurrent_run (__main__.DownloadTests.test_14_no_overwrite_or_concurrent_run) ... ok
+test_15_broken_response_retry (__main__.DownloadTests.test_15_broken_response_retry) ... ok
+test_16_link_failure_fallback (__main__.DownloadTests.test_16_link_failure_fallback) ... ok
+test_17_slow_tail_takeover (__main__.DownloadTests.test_17_slow_tail_takeover) ... ok
+test_18_insufficient_cards (__main__.DownloadTests.test_18_insufficient_cards) ... ok
+test_19_remote_version_changes_mid_download (__main__.DownloadTests.test_19_remote_version_changes_mid_download) ... ok
+test_20_pause_during_prepare (__main__.DownloadTests.test_20_pause_during_prepare) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 51.445s
+
+OK

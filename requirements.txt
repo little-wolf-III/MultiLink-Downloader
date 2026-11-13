@@ -1,0 +1,2 @@
+# Python 3.10+，仅使用标准库，不需要 pip install。
+# Windows 安装 Python 时保留 Tcl/Tk and IDLE 组件。

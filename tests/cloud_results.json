@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "count": 24,
+  "platform": "linux",
+  "tests": [
+    {
+      "test": "__main__.DownloadTests.test_01_interface_filter",
+      "status": "PASS",
+      "seconds": 0.544
+    },
+    {
+      "test": "__main__.DownloadTests.test_02_counts_one_to_four",
+      "status": "PASS",
+      "seconds": 11.785
+    },
+    {
+      "test": "__main__.DownloadTests.test_03_auto_independent_four",
+      "status": "PASS",
+      "seconds": 4.291
+    },
+    {
+      "test": "__main__.DownloadTests.test_04_auto_shared_single",
+      "status": "PASS",
+      "seconds": 8.217
+    },
+    {
+      "test": "__main__.DownloadTests.test_05_redirect",
+      "status": "PASS",
+      "seconds": 2.813
+    },
+    {
+      "test": "__main__.DownloadTests.test_06_reject_no_range",
+      "status": "PASS",
+      "seconds": 0.513
+    },
+    {
+      "test": "__main__.DownloadTests.test_07_reject_bad_content_range",
+      "status": "PASS",
+      "seconds": 0.513
+    },
+    {
+      "test": "__main__.DownloadTests.test_08_429_probe_global_stop",
+      "status": "PASS",
+      "seconds": 0.512
+    },
+    {
+      "test": "__main__.DownloadTests.test_09_429_download_checkpoint",
+      "status": "PASS",
+      "seconds": 1.518
+    },
+    {
+      "test": "__main__.DownloadTests.test_10_pause_resume_corrupt_block",
+      "status": "PASS",
+      "seconds": 3.363
+    },
+    {
+      "test": "__main__.DownloadTests.test_11_resume_version_changed",
+      "status": "PASS",
+      "seconds": 1.691
+    },
+    {
+      "test": "__main__.DownloadTests.test_12_missing_validator_resume_refused",
+      "status": "PASS",
+      "seconds": 1.691
+    },
+    {
+      "test": "__main__.DownloadTests.test_13_hash_mismatch_preserves_part",
+      "status": "PASS",
+      "seconds": 2.812
+    },
+    {
+      "test": "__main__.DownloadTests.test_14_no_overwrite_or_concurrent_run",
+      "status": "PASS",
+      "seconds": 0.509
+    },
+    {
+      "test": "__main__.DownloadTests.test_15_broken_response_retry",
+      "status": "PASS",
+      "seconds": 2.323
+    },
+    {
+      "test": "__main__.DownloadTests.test_16_link_failure_fallback",
+      "status": "PASS",
+      "seconds": 2.328
+    },
+    {
+      "test": "__main__.DownloadTests.test_17_slow_tail_takeover",
+      "status": "PASS",
+      "seconds": 3.529
+    },
+    {
+      "test": "__main__.DownloadTests.test_18_insufficient_cards",
+      "status": "PASS",
+      "seconds": 0.815
+    },
+    {
+      "test": "__main__.DownloadTests.test_19_remote_version_changes_mid_download",
+      "status": "PASS",
+      "seconds": 1.153
+    },
+    {
+      "test": "__main__.DownloadTests.test_20_pause_during_prepare",
+      "status": "PASS",
+      "seconds": 0.515
+    },
+    {
+      "test": "DownloadTests.test_21_small_and_unaligned_files",
+      "status": "PASS"
+    },
+    {
+      "test": "DownloadTests.test_22_more_than_four_candidates",
+      "status": "PASS"
+    },
+    {
+      "test": "DownloadTests.test_23_no_validator_fresh_download",
+      "status": "PASS"
+    },
+    {
+      "test": "DownloadTests.test_24_matching_expected_hash",
+      "status": "PASS"
+    }
+  ],
+  "note": "20 项最终后端回归 + 4 项新增边界测试，补测另重复通过第20项；均执行成功。",
+  "source_sha256": {
+    "network.py": "ab18f5c0956f47a933ef0c75ae5e8578ee71b18fdb694dfbd653ab5243f11630",
+    "downloader.py": "088918ae6dfd7b440edd35b7819f9fa58933a9537e035db148fa0171bf881168",
+    "gui.py": "441fa4df976d886d5dd15f5bc958163345459c444282b156db819279a601402d"
+  }
+}
