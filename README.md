@@ -77,6 +77,19 @@ GitHub/Hugging Face 等的可访问文件直链可尝试使用；服务端必须
 python downloader.py --list
 python downloader.py --url "https://example.com/file.bin" --out "file.bin"
 python downloader.py --url "https://example.com/file.bin" --out "file.bin" --interfaces 9,12,15,18 --count 4
+
+
+## 许可证与商业授权
+
+本项目采用 [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0)，完整条款见仓库中的 [LICENSE](LICENSE)。
+
+允许按照许可证进行非商业使用、学习、修改和分发。慈善组织、教育机构、公共研究机构等的使用，适用许可证中明确列出的允许条款。分发时请保留许可证及必要的版权声明。
+
+除许可证已明确允许的用途外，商业使用须事先获得作者的另行授权；无论是否公开源码，均不因此免除商业授权要求。
+
+如需申请商业授权，请通过本仓库的 [Issues](https://github.com/little-wolf-III/MultiLink-Downloader/issues) 联系作者，简要说明使用场景。请勿在公开 Issue 中提交商业机密或个人敏感信息。
+
+本项目公开提供源码，但因包含非商业用途限制，不属于 OSI 定义的开源软件。本说明仅作摘要，具体权利与义务以 LICENSE 及另行签订的授权协议为准。
 上面的 example.com 是格式示例，不是实际测试下载源。
 
 六、验证范围
